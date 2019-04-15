@@ -1,0 +1,9 @@
+﻿  Card.cpp
+  CardNode.cpp
+  Deck.cpp
+  DeckTests.cpp
+  Hand.cpp
+  TestHand.cpp
+  Generating Code...
+c:\users\dorse\source\repos\card deck\decklibrary\deck.cpp(185): warning C4700: uninitialized local variable 'c' used
+  DeckLibrary.vcxproj -> C:\Users\dorse\source\repos\Card Deck\Debug\DeckLibrary.lib
