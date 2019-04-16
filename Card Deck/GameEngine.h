@@ -5,7 +5,8 @@
 //
 #include "Hand.h"
 //state dependencies - add Gamestates here
-#include "Menu.h"
+
+
 //std Lib dependencies
 #include <vector>
 
@@ -13,16 +14,18 @@ class GameState;
 class GameEngine
 {
 public:
+	GameEngine();
 	void init();
 	void cleanup();//most likely not nessesary
 
 	//state management
 	void pushState(GameState *nState);
+	void popState(); 
 	GameState * peekState();
-	void popState();
-
 	
 
+	
+	void GameLoop();
 
 
 

@@ -1,14 +1,15 @@
-
 #include "Menu.h"
 #include "GameEngine.h"
-#include <iostream>
+
 
 Menu::Menu()
 {
+	
 }
-Menu::Menu(GameEngine * game)
+
+Menu::Menu(GameEngine * game) : GameState(game)
 {
-	getRefs(game);
+	init();
 }
 
 Menu::~Menu()
@@ -17,24 +18,20 @@ Menu::~Menu()
 
 void Menu::init()
 {
+	rect.setSize(sf::Vector2f(game->window.getSize()));
+	rect.setPosition(0, 0);
+	rect.setFillColor(sf::Color::Blue);
 
 }
-void Menu::cleanup()
-{
-
-}
 
 
+//most likely wont be used
+
+
+//this is the how events are handled
 void Menu::HandleEvents(GameEngine *game)
 {
-	sf::RenderWindow *windowPtr = &(game->window);
-	while (game->window.pollEvent(game->event)) {
-		if (game->event.KeyPressed)
-		{
-			
-			if (game->event.key.code == sf::Keyboard::Space) std::cout << "SpacePressed";
-		}
-	}
+
 }
 void Menu::Update(GameEngine *game)
 {
@@ -42,6 +39,8 @@ void Menu::Update(GameEngine *game)
 }
 void Menu::Draw(GameEngine* game)
 {
+	game->window.draw(rect);
+	std::cout << "boop";
 
+	game->window.display();
 }
-

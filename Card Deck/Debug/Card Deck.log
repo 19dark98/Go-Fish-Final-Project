@@ -1,7 +1,4 @@
-﻿  GameEngine.cpp
-c:\users\dorse\source\repos\card deck\card deck\gameengine.cpp(28): warning C4244: 'argument': conversion from 'double' to 'unsigned int', possible loss of data
-  GameState.cpp
+﻿  TestStack.cpp
   main.cpp
-  Menu.cpp
   Generating Code...
   Card Deck.vcxproj -> C:\Users\dorse\source\repos\Card Deck\Debug\Card Deck.exe

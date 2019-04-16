@@ -1,7 +1,7 @@
 #include "SFML/Graphics.hpp"
 #include "SFML/Window.hpp"
 
-//forward declaration used to access the engine data without casueing infinite recursive calls
+//forward declaration used to access the engine data without causing infinite recursive calls
 class GameEngine;
 
 class GameState
@@ -11,11 +11,12 @@ protected:
 	sf::Event * eventPtr;
 public:
 	GameState();
+	GameState(GameEngine * game);
 	//start end Functions
 	virtual void init() = 0;
-	virtual void cleanup() = 0;
-
-	//most likely wont be used
+	
+	GameEngine * game;
+	
 
 
 	//this is the how events are handled
