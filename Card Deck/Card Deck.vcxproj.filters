@@ -16,6 +16,12 @@
     <Filter Include="Gamestates">
       <UniqueIdentifier>{413c1b88-655a-464b-8a17-a2e1df942fc9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Template Classes">
+      <UniqueIdentifier>{e7236d16-6f42-4f8e-853d-2376a894c2f9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Test Classes">
+      <UniqueIdentifier>{22439fa7-7f58-4009-bfab-1434f962bf70}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -25,10 +31,13 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="GameState.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Gamestates</Filter>
     </ClCompile>
     <ClCompile Include="Menu.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TestStack.cpp">
+      <Filter>Test Classes</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -36,10 +45,19 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="GameState.h">
-      <Filter>Header Files</Filter>
+      <Filter>Gamestates</Filter>
+    </ClInclude>
+    <ClInclude Include="Node.h">
+      <Filter>Template Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Stack.h">
+      <Filter>Template Classes</Filter>
     </ClInclude>
     <ClInclude Include="Menu.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TestStack.h">
+      <Filter>Test Classes</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
