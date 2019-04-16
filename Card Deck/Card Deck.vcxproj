@@ -155,6 +155,7 @@
     <ClCompile Include="GameState.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Menu.cpp" />
+    <ClCompile Include="Pairs.cpp" />
     <ClCompile Include="TestStack.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -167,6 +168,7 @@
     <ClInclude Include="GameState.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="Node.h" />
+    <ClInclude Include="Pairs.h" />
     <ClInclude Include="Stack.h" />
     <ClInclude Include="TestStack.h" />
   </ItemGroup>
