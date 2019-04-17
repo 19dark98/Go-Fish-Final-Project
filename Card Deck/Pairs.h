@@ -3,6 +3,7 @@
 class Pairs
 {
 public:
+	Pairs();
 	Pairs(Card * pCard1, Card * pCard2);
 	~Pairs();
 	Card * getCard1Ptr();

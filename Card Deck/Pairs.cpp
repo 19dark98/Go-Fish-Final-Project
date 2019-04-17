@@ -1,6 +1,10 @@
 #include "Pairs.h"
 
-
+Pairs::Pairs()
+{
+	this->pCard1 = nullptr;
+	this->pCard2 = nullptr;
+}
 
 Pairs::Pairs(Card * pCard1, Card * pCard2)
 {

@@ -1,27 +1,34 @@
 #include "Hand.h"
+#include "Player.h"
+
+//test includes
 #include "DeckTests.h"
 #include "TestHand.h"
 #include "TestStack.h"
+#include "PlayerTests.h"
 
+//include engine
 #include "GameEngine.h"
 
 
-#include "Menu.h"
-
-#include "SFML/Graphics.hpp"
 
 int main()
 {
 	//test cases
 	TestHand testHand;
-	testHand.TestPropertiesEmpty();
+	TestStack testStack;
 	DeckTests dt;
+	PlayerTests pt;
+	testHand.TestPropertiesEmpty();
 	dt.testDeal();
 	dt.testConstructors();
-	TestStack testStack;
+	
 	testStack.testPush();
 	testStack.testDestructor();
-	
+	pt.testDraw();
+	pt.testCheckPairs();
+
+	//end of test cases
 
 	GameEngine game;
 	//init gameEngine
