@@ -41,6 +41,12 @@ void Deck::setHeadPointer(CardNode * nHead)
 }
 //other functions
 
+void Deck::resetDeck()
+{
+	destroyDeck(this->mpHead);
+	initDeck(mpHead);
+}
+
 void Deck::addCard(Card *c)
 {
 	addCard(c, mpHead);
@@ -196,12 +202,17 @@ Card *Deck::deleteAtFront(CardNode **mpHead)
 	delete temp;
 	return c;
 }
-void destroyDeck(CardNode *mpHead)
+void Deck::destroyDeck(CardNode *mpHead)
 {
-	while (mpHead != nullptr)
+	if (this->mpHead != nullptr)
 	{
-
+		if (mpHead->getNextNode() != nullptr)
+		{
+			destroyDeck(mpHead->getNextNode());
+		}
+		delete mpHead;
 	}
+	if (mpHead == this->mpHead) this->mpHead = nullptr;
 }
 
 bool Deck::isEmpty()

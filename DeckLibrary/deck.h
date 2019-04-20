@@ -27,6 +27,8 @@ public:
 	//void setHeadPtr(CardNode newHeadPtr);
 	
 	//other functions
+	void resetDeck();
+	void clearDeck() { destroyDeck(mpHead); };
 	virtual void addCard(Card *c);
 	void addCard(int faceValue, int suitValue);
 	void Shuffle();

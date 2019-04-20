@@ -12,7 +12,7 @@ public:
 	void sortHand();
 	Card *discardAtNodeN(int n);
 	void addCard(Card *c);
-
+	
 	//properties
 	bool hasSuit(int suit);
 	bool hasFace(int face);

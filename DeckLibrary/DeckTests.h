@@ -7,5 +7,6 @@ public:
 	~DeckTests();
 	void testConstructors();
 	void testDeal();
+	void testDestroyDeck();
 };
 
