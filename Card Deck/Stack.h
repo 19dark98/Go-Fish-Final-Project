@@ -16,6 +16,7 @@ public:
 	Node<T> * peek() { return mpHead; }; //tested
 	bool isEmpty() { return (mpHead == nullptr); }; //tested 
 	int getSize() { return size; }; //tested
+	void clearStack() { clearStack(mpHead); };
 
 private:
 	Node<T> * mpHead;
