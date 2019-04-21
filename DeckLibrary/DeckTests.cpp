@@ -26,3 +26,10 @@ void DeckTests::testDeal()
 	d2 << d1;
 	cout << "after: \n d1:" << d1 << "\n d2: " << d2;
 }
+
+void DeckTests::testDestroyDeck()
+{
+	Deck d1(false);
+
+	d1.resetDeck();
+}

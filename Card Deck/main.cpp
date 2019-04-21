@@ -22,7 +22,7 @@ int main()
 	testHand.TestPropertiesEmpty();
 	dt.testDeal();
 	dt.testConstructors();
-	
+	dt.testDestroyDeck();
 	testStack.testPush();
 	testStack.testDestructor();
 	pt.testDraw();

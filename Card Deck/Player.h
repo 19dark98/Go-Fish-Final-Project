@@ -18,7 +18,8 @@ public:
 	bool isHandEmpty() { return playerHand.isEmpty(); };//tested
 	void drawCards(Deck &deck, int num);//tested
 	int checkForPairs();//tested
-
+	void clearPairs() { pairList.clearStack(); };
+	void clearHand() { playerHand.clearDeck(); };
 	//functions reguarding Pairs
 	int countPairs() { return pairList.getSize(); };
 

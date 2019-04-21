@@ -4,6 +4,7 @@
 #include "SFML/Window.hpp"
 //
 #include "Hand.h"
+#include "Player.h"
 //state dependencies - add Gamestates here
 
 
@@ -31,8 +32,13 @@ public:
 
 	sf::RenderWindow window;
 	sf::Event event;
-	//test info
-	int i = 1;
+	
+	//added player and deck information
+	Player HumanPlayer;
+	Player CpuPlayer;
+	Deck deck;
+	
+	
 private:
 	//keeps track of all the game states and used to call current
 	std::vector<GameState *> states;

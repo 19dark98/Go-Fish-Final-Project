@@ -51,6 +51,9 @@
     <ClCompile Include="PlayerTests.cpp">
       <Filter>Test Classes</Filter>
     </ClCompile>
+    <ClCompile Include="Turn.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameEngine.h">
@@ -79,6 +82,9 @@
     </ClInclude>
     <ClInclude Include="PlayerTests.h">
       <Filter>Test Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Turn.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

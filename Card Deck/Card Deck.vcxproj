@@ -159,6 +159,7 @@
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PlayerTests.cpp" />
     <ClCompile Include="TestStack.cpp" />
+    <ClCompile Include="Turn.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DeckLibrary\DeckLibrary.vcxproj">
@@ -175,6 +176,7 @@
     <ClInclude Include="PlayerTests.h" />
     <ClInclude Include="Stack.h" />
     <ClInclude Include="TestStack.h" />
+    <ClInclude Include="Turn.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
