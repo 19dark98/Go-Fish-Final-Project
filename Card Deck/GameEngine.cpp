@@ -34,14 +34,21 @@ void GameEngine::GameLoop()
 {
 	while (window.isOpen())
 	{
+
+
+		
 		//handle Events
-		peekState()->HandleEvents(&(*this));
+		if (!states.empty()) peekState()->HandleEvents(&(*this));
+		else window.close();
 
 		window.clear();
-		peekState()->Update(&(*this));
+		
+		if (!states.empty()) peekState()->Update(&(*this));
+		else window.close();
 
-		peekState()->Draw(&(*this));
 
+		if (!states.empty()) peekState()->Draw(&(*this));
+		else window.close();
 
 
 	}
