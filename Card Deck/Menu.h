@@ -1,5 +1,7 @@
 #pragma once
 #include "GameState.h"
+
+#define NUMBER_OF_OPTIONS 3
 class Menu : public GameState
 {
 public:
@@ -10,7 +12,7 @@ public:
 	//start end Functions
 	void init();
 
-	//most likely wont be used
+	
 
 
 	//this is the how events are handled
@@ -20,6 +22,23 @@ public:
 
 
 private:
-	sf::RectangleShape rect;
+	sf::RectangleShape Background;
+
+	sf::Texture BGtext;
+	sf::Sprite BGsprite;
+
+	int optionSelected;
+	sf::Font font;
+	sf::Text menu[NUMBER_OF_OPTIONS];
+
+
+	//private functions
+
+
+	void KeyPressedEvents();
+	void MoveUp();
+	void MoveDown();
+	void SelectionMade();
+
 };
 
