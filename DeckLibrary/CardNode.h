@@ -20,7 +20,7 @@ public:
 	CardNode operator=(CardNode &rhs);
 	//getters
 	CardNode *getNextNode();
-	Card *getCardNode();
+	Card * getCardNode();
 	//setters
 	void setNextNode(CardNode *newNode);
 	void setCardNode(Card *newNode);

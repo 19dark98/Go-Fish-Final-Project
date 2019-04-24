@@ -49,8 +49,9 @@ CardNode *CardNode::getNextNode()
 {
 	return this->pNext;
 }
-Card *CardNode::getCardNode()
+Card * CardNode::getCardNode()
 {
+	if(this != nullptr)
 	return this->pCard;
 }
 //setters

@@ -61,7 +61,7 @@ void Deck::Shuffle()
 }
 CardNode *Deck::getPointerAtN(int n)
 {
-	CardNode *node = getPointerAtN(mpHead, n);
+	CardNode *node = &*getPointerAtN(mpHead, n);
 	return node;
 }
 int Deck::getDeckLength()
