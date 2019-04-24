@@ -25,6 +25,9 @@
     <Filter Include="GameLogic">
       <UniqueIdentifier>{fc3a7d31-4ba4-4214-bb8b-9a14c6dd9cb4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Turn Classes">
+      <UniqueIdentifier>{6f092900-9bbf-4cd4-b969-86d7138fe7b7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -51,7 +54,13 @@
     <ClCompile Include="PlayerTests.cpp">
       <Filter>Test Classes</Filter>
     </ClCompile>
+    <ClCompile Include="WrappedText.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="Turn.cpp">
+      <Filter>Turn Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="HumanTurn.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -83,7 +92,13 @@
     <ClInclude Include="PlayerTests.h">
       <Filter>Test Classes</Filter>
     </ClInclude>
+    <ClInclude Include="WrappedText.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="Turn.h">
+      <Filter>Turn Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="HumanTurn.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

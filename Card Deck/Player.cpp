@@ -28,7 +28,7 @@ void Player::drawCards(Deck &deck, int num)
 
 int Player::checkForPairs()
 {
-	playerHand.getDeckLength();
+	
 	int numPairs = 0;
 	for (int i = 1; i < playerHand.getDeckLength(); i++)
 	{
@@ -42,6 +42,17 @@ int Player::checkForPairs()
 	}
 	return numPairs;
 }
+
+int Player::hasMatch(Card * selectedCard)
+{
+	
+	for (int i = 1; i < this->getHandSize(); i++)
+	{
+		if (isFaceValueEqual(*this->getNodeAtN(i), *selectedCard)) return i;
+	}
+	return 0;
+}
+
 
 //Private functions
 

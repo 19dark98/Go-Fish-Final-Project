@@ -1,6 +1,6 @@
 #include "Hand.h"
 #include "Player.h"
-
+#include "WrappedText.h"
 //test includes
 #include "DeckTests.h"
 #include "TestHand.h"
@@ -14,6 +14,8 @@
 
 int main()
 {
+	sf::Clock clock;
+	clock.restart();
 	//test cases
 	TestHand testHand;
 	TestStack testStack;
@@ -29,11 +31,17 @@ int main()
 	pt.testCheckPairs();
 
 	//end of test cases
+	cout << clock.getElapsedTime().asSeconds();
+	
 
-	GameEngine game;
+
+	GameEngine game2;
 	//init gameEngine
 	
-	game.GameLoop();
+
+	
+
+	game2.GameLoop();
 
 	//runGameLoop
 	

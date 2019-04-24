@@ -1,20 +1,70 @@
-#include "Turn.h"
-
+#include "HumanTurn.h"
 #include "GameEngine.h"
-#include "Player.h"
 
 
-Turn::Turn(GameEngine *game)//
+HumanTurn::HumanTurn(GameEngine *game2) : GameState(game2)
 {
-	this->game2 = game;
+	selectedIndex = 1;
 }
 
 
-Turn::~Turn()
+HumanTurn::~HumanTurn()
 {
 }
+void HumanTurn::init()
+{
+	
+}
 
-void Turn::DrawGame()
+
+void HumanTurn::HandleEvents(GameEngine *game2)
+{
+	while (this->game2->window.pollEvent(this->game2->event))
+	{
+		switch (this->game2->event.type)
+		{
+		case sf::Event::KeyPressed:
+			
+			break;
+		}
+	}
+}
+
+void  HumanTurn::Update(GameEngine *game2)
+{
+
+}
+
+//|Draws to the Window|
+void  HumanTurn::Draw(GameEngine* game2)
+{
+	this->DrawGame();
+}
+
+
+
+
+void HumanTurn::keyboardPressEvent()
+{
+	switch (game2->event.key.code)
+	{
+	case sf::Keyboard::Left:
+
+		break;
+	}
+}
+void HumanTurn::moveRight()
+{
+
+}
+void HumanTurn::moveLeft()
+{
+
+}
+
+
+
+void HumanTurn::DrawGame()
 {
 	drawBackground();
 	drawPlayerHand();
@@ -23,13 +73,13 @@ void Turn::DrawGame()
 	drawPairNum();
 }
 
-void Turn::MakeChoice(Player &curPlayersTurn, Player &otherPlayer, Card * selectedCard)
+void HumanTurn::MakeChoice(Player &curPlayersTurn, Player &otherPlayer, Card * selectedCard)
 {
 	int index = otherPlayer.hasMatch(selectedCard);
 	if (index)
 	{
 		curPlayersTurn.addCard(otherPlayer.RemoveCard(index));
-		while (otherPlayer.isHandEmpty()) 
+		while (otherPlayer.isHandEmpty())
 		{
 			otherPlayer.drawCards(this->game2->deck, 4);
 		}
@@ -50,34 +100,34 @@ void Turn::MakeChoice(Player &curPlayersTurn, Player &otherPlayer, Card * select
 }
 
 //private functions
-void Turn::drawBackground()
+void HumanTurn::drawBackground()
 {
 	game2->window.draw(BackgroundSprite);
 }
-void Turn::drawPlayerHand()
+void HumanTurn::drawPlayerHand()
 {
 
 }
-void Turn::drawCpuHand()
+void HumanTurn::drawCpuHand()
 {
 
 }
-void Turn::drawDeck()
+void HumanTurn::drawDeck()
 {
 
 }
-void Turn::drawPairNum()
+void HumanTurn::drawPairNum()
 {
 
 }
 
 
-void Turn::loadBackground()
+void HumanTurn::loadBackground()
 {
 	this->BackgroundTexture.loadFromFile("Assets/CardBackground.jpg");
 	this->BackgroundSprite.setTexture(BackgroundTexture);
 }
-void Turn::resizeBackground()
+void HumanTurn::resizeBackground()
 {
 	BackgroundSprite.setScale(
 		game2->window.getSize().x / BackgroundSprite.getLocalBounds().width,
@@ -85,12 +135,12 @@ void Turn::resizeBackground()
 	);
 }
 
-bool Turn::isGameOver()
+bool HumanTurn::isGameOver()
 {
 	if (game2->CpuPlayer.countPairs() + game2->HumanPlayer.countPairs() == 26) return true;
 	return false;
 }
-void Turn::resetGame()
+void HumanTurn::resetGame()
 {
 	//clears pairs
 	game2->CpuPlayer.clearPairs();
@@ -102,7 +152,7 @@ void Turn::resetGame()
 	game2->deck.resetDeck();
 }
 
-int Turn::findVictor()
+int HumanTurn::findVictor()
 {
 	int victorStatus = 0;
 	if (game2->HumanPlayer.countPairs() > game2->CpuPlayer.countPairs())

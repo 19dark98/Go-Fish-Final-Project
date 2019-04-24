@@ -1,8 +1,8 @@
 #include "SFML/Graphics.hpp"
 #include "SFML/Window.hpp"
-
+#include "GameEngine.h"
 //forward declaration used to access the engine data without causing infinite recursive calls
-class GameEngine;
+//class GameEngine;
 
 class GameState
 {
@@ -20,13 +20,13 @@ public:
 
 
 	//this is the how events are handled
-	virtual void HandleEvents(GameEngine *game) = 0;
+	virtual void HandleEvents(GameEngine *game2) = 0;
 
 	//|Updates the Game Logic|
-	virtual void Update(GameEngine *game) = 0;
+	virtual void Update(GameEngine *game2) = 0;
 
 	//|Draws to the Window|
-	virtual void Draw(GameEngine* game) = 0;
+	virtual void Draw(GameEngine* game2) = 0;
 
 
 	//obsolete function

@@ -9,7 +9,7 @@ Menu::Menu()
 	
 }
 
-Menu::Menu(GameEngine * game) : GameState(game)
+Menu::Menu(GameEngine * game2) : GameState(game2)
 {
 	init();
 }
@@ -60,14 +60,14 @@ void Menu::init()
 
 
 //this is the how events are handled
-void Menu::HandleEvents(GameEngine *game)
+void Menu::HandleEvents(GameEngine *game2)
 {
-	while (game->window.pollEvent(game->event))
+	while (game2->window.pollEvent(game2->event))
 	{
-		switch (game->event.type)
+		switch (game2->event.type)
 		{
 		case sf::Event::Closed:
-			game->window.close();
+			this->game->window.close();
 			break;
 		case sf::Event::KeyPressed:
 			KeyPressedEvents();
@@ -76,19 +76,19 @@ void Menu::HandleEvents(GameEngine *game)
 		
 	}
 }
-void Menu::Update(GameEngine *game)
+void Menu::Update(GameEngine *game2)
 {
 
 }
-void Menu::Draw(GameEngine* game)
+void Menu::Draw(GameEngine* game2)
 {
-	game->window.draw(BGsprite);
+	game2->window.draw(BGsprite);
 	
 	for (int i = 0; i < NUMBER_OF_OPTIONS; i++)
 	{
-		game->window.draw(this->menu[i]);
+		game2->window.draw(this->menu[i]);
 	}
-	game->window.display();
+	game2->window.display();
 }
 
 
@@ -132,7 +132,7 @@ void Menu::SelectionMade()
 	switch (optionSelected)
 	{
 	case 0://push HumanPlayerTurn
-		
+		//game->pushState(new Turn(game));
 		break;
 	case 1:
 		//push Rules
