@@ -15,27 +15,27 @@
 
 int main()
 {
-	sf::Clock clock;
-	clock.restart();
-	//test cases
-	TestHand testHand;
-	TestStack testStack;
-	DeckTests dt;
-	PlayerTests pt;
-	testHand.TestPropertiesEmpty();
-	dt.testDeal();
-	dt.testConstructors();
-	dt.testDestroyDeck();
-	testStack.testPush();
-	testStack.testDestructor();
-	pt.testDraw();
-	pt.testCheckPairs();
+	//sf::Clock clock;
+	//clock.restart();
+	////test cases
+	//TestHand testHand;
+	//TestStack testStack;
+	//DeckTests dt;
+	//PlayerTests pt;
+	//testHand.TestPropertiesEmpty();
+	//dt.testDeal();
+	//dt.testConstructors();
+	//dt.testDestroyDeck();
+	//testStack.testPush();
+	//testStack.testDestructor();
+	//pt.testDraw();
+	//pt.testCheckPairs();
 
-	//end of test cases
-	cout << clock.getElapsedTime().asSeconds();
+	////end of test cases
+	//cout << clock.getElapsedTime().asSeconds();
 	
 
-
+	srand(time(NULL));
 	GameEngine game;
 	//init gameEngine
 	

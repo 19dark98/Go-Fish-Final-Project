@@ -5,9 +5,11 @@
 class Player
 {
 protected:
-	Hand playerHand;
+	
 	Stack<Pairs *> pairList;
 public:
+	Hand playerHand;
+
 	Player();
 	virtual ~Player();
 	//functions reguarding Player hand
@@ -30,7 +32,7 @@ public:
 	void checkGuess(Player &player, Card *cardPicked);
 	int hasMatch(Card * selectedCard);
 	void addCard(Card * addedCard) { playerHand.addCard(addedCard); };
-;
+
 	Card * RemoveCard(int index) { return playerHand.discardAtNodeN(index); };
 	Card * getNodeAtN(int i) { return playerHand.getPointerAtN(i)->getCardNode(); };
 

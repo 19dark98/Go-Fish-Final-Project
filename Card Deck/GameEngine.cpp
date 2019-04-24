@@ -24,6 +24,11 @@ void GameEngine::init()
 	deck.resetDeck();
 	HumanPlayer.drawCards(deck, 7);
 	CpuPlayer.drawCards(deck, 7);
+	HumanPlayer.checkForPairs();
+	CpuPlayer.checkForPairs();
+
+	this->faceDownCard.loadFromFile("Assets/card back red.png");
+
 }
 //used to go to new gamestate
 void GameEngine::pushState(GameState *nState)

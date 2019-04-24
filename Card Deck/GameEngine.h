@@ -53,7 +53,7 @@ public:
 	Player HumanPlayer;
 	Player CpuPlayer;
 	Deck deck;
-	
+	sf::Texture faceDownCard;
 	std::vector<GameState *> states;
 private:
 	//keeps track of all the game states and used to call current running gamestate

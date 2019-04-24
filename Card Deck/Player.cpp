@@ -30,7 +30,7 @@ int Player::checkForPairs()
 {
 	
 	int numPairs = 0;
-	for (int i = 1; i < playerHand.getDeckLength(); i++)
+	for (int i = 1; i < playerHand.getDeckLength() && getHandSize() > 1; i++)
 	{
 		if (isFaceValueEqual(*playerHand.getPointerAtN(i)->getCardNode(), *playerHand.getPointerAtN(i + 1)->getCardNode()))
 		{
