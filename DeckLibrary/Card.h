@@ -2,6 +2,8 @@
 #include <iostream>
 #include <string>
 
+#include "SFML/Graphics.hpp"
+
 using std::cout;
 using std::endl;
 using std::string;
@@ -31,10 +33,15 @@ public:
 
 	//other functions
 	Card operator=(Card &c);
+
+	sf::Sprite cardSprite;
 private:
 	int suit;//cards suit
 
 	int faceValue; // cards numerical value
+
+	
+	sf::Texture cardTexture;
 };
 
 //nonMember functions

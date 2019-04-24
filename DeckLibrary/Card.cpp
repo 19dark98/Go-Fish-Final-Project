@@ -1,5 +1,6 @@
 #include "Card.h"
 
+using std::to_string;
 //constructors
 Card::Card()
 {
@@ -10,6 +11,11 @@ Card::Card(int const iniSuit, int const iniFaceValue)
 {
 	setFaceValue(iniFaceValue);
 	setSuit(iniSuit);
+	string filePath = "Assets/" + to_string(suit)+ " "+ to_string(faceValue) + ".png";
+
+	cardTexture.loadFromFile(filePath);
+	cardSprite.setTexture(cardTexture);
+
 }
 Card::Card(Card const &copy)
 {
