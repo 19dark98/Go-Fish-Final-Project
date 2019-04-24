@@ -1,7 +1,8 @@
 #include "Menu.h"
-
+//#include "HumanTurn.h"
 //must be included inorder to access the gameEngine functions
-#include "GameEngine.h"
+//#include "GameEngine.h"
+//#include "GameState.h"
 
 
 Menu::Menu()
@@ -9,9 +10,10 @@ Menu::Menu()
 	
 }
 
-Menu::Menu(GameEngine * game) : GameState(game)
+Menu::Menu(GameEngine * game2) : GameState(game2)
 {
 	init();
+	currentState = menustate;
 }
 
 Menu::~Menu()
@@ -60,35 +62,52 @@ void Menu::init()
 
 
 //this is the how events are handled
-void Menu::HandleEvents(GameEngine *game)
+void Menu::HandleEvents(GameEngine *game2)
 {
-	while (game->window.pollEvent(game->event))
+	switch (currentState)
 	{
-		switch (game->event.type)
+	case menustate:
+		while (game2->window.pollEvent(game2->event))
 		{
-		case sf::Event::Closed:
-			game->window.close();
-			break;
-		case sf::Event::KeyPressed:
-			KeyPressedEvents();
-			break;
-		}
-		
-	}
-}
-void Menu::Update(GameEngine *game)
-{
+			switch (game2->event.type)
+			{
+			case sf::Event::Closed:
+				this->game->window.close();
+				break;
+			case sf::Event::KeyPressed:
+				KeyPressedEvents();
+				break;
+			}
 
-}
-void Menu::Draw(GameEngine* game)
-{
-	game->window.draw(BGsprite);
-	
-	for (int i = 0; i < NUMBER_OF_OPTIONS; i++)
-	{
-		game->window.draw(this->menu[i]);
+		}
+		break;
 	}
-	game->window.display();
+	
+}
+void Menu::Update(GameEngine *game2)
+{
+	switch (currentState)
+	{
+	case menustate:
+		break;
+	}
+	
+}
+void Menu::Draw(GameEngine* game2)
+{
+	game2->window.draw(BGsprite);
+	
+	switch (currentState)
+	{
+	case menustate:
+		for (int i = 0; i < NUMBER_OF_OPTIONS; i++)
+		{
+			game2->window.draw(this->menu[i]);
+		}
+		break;
+	}
+	
+	game2->window.display();
 }
 
 
@@ -132,10 +151,10 @@ void Menu::SelectionMade()
 	switch (optionSelected)
 	{
 	case 0://push HumanPlayerTurn
-		
+		currentState = playerTurn;
 		break;
 	case 1:
-		//push Rules
+		currentState = rules;
 		break;
 	case 2:
 		game->popState();

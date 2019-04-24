@@ -3,13 +3,14 @@
 #include "SFML/Graphics.hpp"
 #include "SFML/Window.hpp"
 //
-#include "Hand.h"
+//#include "Hand.h"
 #include "Player.h"
 //state dependencies - add Gamestates here
 
 
 //std Lib dependencies
 #include <vector>
+#include <thread>
 
 class GameState;
 class GameEngine
@@ -26,7 +27,7 @@ public:
 	since the GameState class contains a pointer to the GameEngine these functions can be called within
 	from the derived classes that inherit GameState.
 	*/
-
+	
 	//pushes a state to the top of the stack
 	void pushState(GameState *nState);
 	//removes a state from the top of the stack
@@ -53,14 +54,14 @@ public:
 	Player CpuPlayer;
 	Deck deck;
 	
-	
+	std::vector<GameState *> states;
 private:
 	//keeps track of all the game states and used to call current running gamestate
-	std::vector<GameState *> states;
+	
 
 	//store any data that needed for the game here
 
-
+	void pushPlayerState();
 
 	//end of game data*****************************
 
@@ -74,4 +75,5 @@ private:
 	*/
 	void createWindow(int height, double Ratio, std::string name);
 };
+
 

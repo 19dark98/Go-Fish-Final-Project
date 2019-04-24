@@ -26,6 +26,14 @@ public:
 
 	//checks Hand for pairs
 	int checkForPairs();//tested
+
+	void checkGuess(Player &player, Card *cardPicked);
+	int hasMatch(Card * selectedCard);
+	void addCard(Card * addedCard) { playerHand.addCard(addedCard); };
+;
+	Card * RemoveCard(int index) { return playerHand.discardAtNodeN(index); };
+	Card * getNodeAtN(int i) { return playerHand.getPointerAtN(i)->getCardNode(); };
+
 	void clearPairs() { pairList.clearStack(); };
 	void clearHand() { playerHand.clearDeck(); };
 	//functions reguarding Pairs

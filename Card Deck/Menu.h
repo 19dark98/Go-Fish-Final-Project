@@ -1,12 +1,13 @@
 #pragma once
 #include "GameState.h"
 
+
 #define NUMBER_OF_OPTIONS 3
 class Menu : public GameState
 {
 public:
 	Menu();
-	Menu(GameEngine * game);
+	Menu(GameEngine * game2);
 	~Menu();
 
 	//start end Functions
@@ -16,9 +17,9 @@ public:
 
 
 	//this is the how events are handled
-	void HandleEvents(GameEngine *game);
-	void Update(GameEngine *game);
-	void Draw(GameEngine* game);
+	void HandleEvents(GameEngine *game2);
+	void Update(GameEngine *game2);
+	void Draw(GameEngine* game2);
 
 
 private:
@@ -34,11 +35,14 @@ private:
 
 	//private functions
 
-
+	int curstate;
 	void KeyPressedEvents();
 	void MoveUp();
 	void MoveDown();
 	void SelectionMade();
 
+
+	
 };
 
+enum states { menustate, rules, playgame };

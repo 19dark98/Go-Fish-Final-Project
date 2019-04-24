@@ -1,16 +1,28 @@
 #pragma once
 #include "GameState.h"
-#include "Player.h"
-
-
-class Turn /*:
-	public GameState*/
+class HumanTurn : public GameState
 {
 public:
-	Turn(GameEngine *game2);
-	virtual ~Turn();
+	HumanTurn(GameEngine *game2);
+	~HumanTurn();
 
-	//draws the game board with all the information
+	virtual void init();
+
+	//this is the how events are handled
+	void HandleEvents(GameEngine *game2);
+
+	//|Updates the Game Logic|
+	void Update(GameEngine *game2);
+
+	//|Draws to the Window|
+	void Draw(GameEngine* game2);
+private:
+	int selectedIndex;
+
+	void keyboardPressEvent();
+	void moveRight();
+	void moveLeft();
+public:
 	void DrawGame();
 	void MakeChoice(Player &curPlayersTurn, Player &otherPlayer, Card * selectedCard);
 
@@ -23,7 +35,7 @@ private:
 	sf::Sprite BackgroundSprite;
 
 	void drawBackground();//done needs testing
-	
+
 	//Needs Coding
 	void drawPlayerHand();
 	void drawCpuHand();
@@ -37,7 +49,7 @@ private:
 
 
 
-	
+
 protected:
 	bool isGameOver();
 	void resetGame();

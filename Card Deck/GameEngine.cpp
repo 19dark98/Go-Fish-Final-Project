@@ -1,10 +1,16 @@
 #include "GameEngine.h"
+#include "GameState.h"//new
+//#include "Menu.h"
 
-#include "Menu.h"
+
+
+
 
 GameEngine::GameEngine()
 {
 	init();
+	
+
 }
 
 //called when the game engine is first initiated
@@ -12,7 +18,12 @@ GameEngine::GameEngine()
 void GameEngine::init()
 {
 	createWindow(800, 16.0 / 9, "Test");
-	states.push_back(new Menu(this));
+	//states.push_back(new Menu(this)); out
+
+	//initialize Hands and Deck
+	deck.resetDeck();
+	HumanPlayer.drawCards(deck, 7);
+	CpuPlayer.drawCards(deck, 7);
 }
 //used to go to new gamestate
 void GameEngine::pushState(GameState *nState)
@@ -61,3 +72,10 @@ void GameEngine::createWindow(int height, double Ratio, std::string name)
 	window.create(sf::VideoMode(width, height), name);
 }
 
+
+void GameEngine::pushPlayerState()
+{
+	
+	//HumanTurn * hTurn = new HumanTurn(this);
+	//states.push_back(hTurn);
+}
